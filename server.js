@@ -48,7 +48,7 @@ app.post("/delete", (req, res) => {
       if (user) res.json({ message: "User deleted successfully." });
       else res.json({ mesage: "No such user." });
     })
-    .catch(error => console.log(error));
+    .catch(error => res.json({ error: "Could not delete user, try again." }));
 });
 
 app.post("/edit", (req, res) => {
